@@ -6,7 +6,7 @@
     $db_server = "localhost";
     $username = "root";
     $password = "";
-    $db_name = "faceclone";
+    $db_name = "friendzone";
 
     // create a connection
     $conn = new mysqli($db_server, $username, $password, $db_name);
