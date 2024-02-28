@@ -91,12 +91,46 @@
 
                     <span>posted <?php echo $post['created_at']; ?> by <a href="profile.php?username=<?php echo $post_author; ?>"><?php echo $post_author; ?></a></span>
                   </div>
+                  <div class="panel-footer">
+                    <!-- comment form -->
+                    <form method="post" action="php/add-comment.php">
+                      <div class="input-group">
+                        <input class="form-control" type="text" name="comment" placeholder="Add a comment..." required>
+                        <input type="hidden" name="post_id" value="<?php echo $post['id']; ?>">
+                        <span class="input-group-btn">
+                          <button class="btn btn-primary" type="submit" name="add_comment">Comment</button>
+                        </span>
+                      </div>
+                    </form>
+                    <!-- ./comment form -->
+
+                    <!-- comments -->
+                    <?php
+                      $comment_sql = "SELECT * FROM comments WHERE post_id = {$post['id']}";
+                      $comment_result = $conn->query($comment_sql);
+
+                      if ($comment_result->num_rows > 0) {
+                        while($comment = $comment_result->fetch_assoc()) {
+                          ?>
+                          <div class="comment">
+                            <p><?php echo $comment['comment']; ?></p>
+                          </div>
+                          <?php
+                        }
+                      } else {
+                        ?>
+                        <p class="text-center">No comments yet!</p>
+                        <?php
+                      }
+                    ?>
+                    <!-- ./comments -->
+                  </div>
                 </div>
               <?php
             }
           } else {
             ?>
-              <p class="text-center">No posts yet!</p>
+            <p class="text-center">No posts yet!</p>
             <?php
           }
         ?>
