@@ -113,7 +113,7 @@
                       while($comment = $comment_result->fetch_assoc()) {
                         ?>
                         <div class="comment">
-                          <p> <?php echo $comment['username']; ?> Replied <?php echo $comment['comment']; ?></p>
+                          <p><?php echo $comment['username']; ?> Replied <?php echo $comment['comment']; ?></p>
                           <p>
                         </div>
                         <?php
