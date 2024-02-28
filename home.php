@@ -101,27 +101,28 @@
                           <button class="btn btn-primary" type="submit" name="add_comment">Comment</button>
                         </span>
                       </div>
-                    </form>
+                    </form><br/>
                     <!-- ./comment form -->
 
                     <!-- comments -->
                     <?php
-                      $comment_sql = "SELECT * FROM comments WHERE post_id = {$post['id']}";
-                      $comment_result = $conn->query($comment_sql);
+                    $comment_sql = "SELECT c.*, u.username FROM comments c JOIN users u ON c.user_id = u.id WHERE c.post_id = {$post['id']}";
+                    $comment_result = $conn->query($comment_sql);
 
-                      if ($comment_result->num_rows > 0) {
-                        while($comment = $comment_result->fetch_assoc()) {
-                          ?>
-                          <div class="comment">
-                            <p><?php echo $comment['comment']; ?></p>
-                          </div>
-                          <?php
-                        }
-                      } else {
+                    if ($comment_result->num_rows > 0) {
+                      while($comment = $comment_result->fetch_assoc()) {
                         ?>
-                        <p class="text-center">No comments yet!</p>
+                        <div class="comment">
+                          <p> <?php echo $comment['username']; ?> Replied <?php echo $comment['comment']; ?></p>
+                          <p>
+                        </div>
                         <?php
                       }
+                    } else {
+                      ?>
+                      <p class="text-center">No comments yet!</p>
+                      <?php
+                    }
                     ?>
                     <!-- ./comments -->
                   </div>
