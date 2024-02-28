@@ -9,7 +9,7 @@
 
   // remove friend request
   if ($statement->execute()) {
-    redirect_to("/php/remove-request.php?uid=" . $_GET['uid']);
+    redirect_to("./php/remove-request.php?uid=" . $_GET['uid']);
   } else {
     echo "Error: " . $conn->error;
   }

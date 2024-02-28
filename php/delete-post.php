@@ -8,7 +8,7 @@
   $statement->bind_param('i', $_GET['id']);
 
   if ($statement->execute()) {
-    redirect_to("/home.php");
+    redirect_to("../profile.php");
   } else {
     echo "Error: " . $conn->error;
   }

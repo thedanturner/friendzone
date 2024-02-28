@@ -8,7 +8,7 @@
   $statement->bind_param('si', $_POST['content'], $_SESSION['user_id']);
 
   if ($statement->execute()) {
-    redirect_to("/home.php");
+    redirect_to("../home.php");
   } else {
     echo "Error: " . $conn->error;
   }

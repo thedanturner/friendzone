@@ -8,7 +8,7 @@
   $statement->bind_param('ii', $_SESSION['user_id'], $_GET['uid']);
 
   if ($statement->execute()) {
-    redirect_to("/home.php?request_sent=true");
+    redirect_to("../home.php?request_sent=true");
   } else {
     echo "Error: " . $conn->error;
   }

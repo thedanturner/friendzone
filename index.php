@@ -5,14 +5,14 @@
   db_connect();
   // if user is logged in, redirect to home page
   if(is_auth()) {
-    redirect_to("/home.php");
+    redirect_to("./home.php");
   }
 ?>
 
 <!-- main -->
 <main class="container">
   <!-- messages -->
-  <?php if(isset($_GET['registered'])): ?>
+   <?php if(isset($_GET['registered'])): ?>
     <div class="alert alert-success">
       <p>Account created successfully! Use your username and password to login.</p>
     </div>
@@ -27,6 +27,12 @@
   <?php if(isset($_GET['logged_in'])): ?>
     <div class="alert alert-danger">
       <p>You are not logged in!</p>
+    </div>
+  <?php endif; ?>
+
+  <?php if(isset($_GET['username_error'])): ?>
+    <div class="alert alert-danger">
+      <p>Username already exists!</p>
     </div>
   <?php endif; ?>
   <!-- ./messages -->

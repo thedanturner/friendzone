@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FaceClone</title>
+  <title>FriendZone</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -11,7 +11,7 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">FaceClone</a>
+        <a class="navbar-brand" href="index.php">FriendZone</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <?php if(is_auth()): ?>

@@ -8,7 +8,7 @@
   $statement->bind_param('i', $_GET['uid']);
 
   if ($statement->execute()) {
-    redirect_to("/profile.php?username=" . $_SESSION['user_username']);
+    redirect_to("../profile.php?username=" . $_SESSION['user_username']);
   } else {
     echo "Error: " . $conn->error;
   }
