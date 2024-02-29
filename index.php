@@ -37,7 +37,7 @@
   <?php endif; ?>
   <!-- ./messages -->
 
-  <h1 class="text-center">Welcome to FriendZone! <br><small>A simple Facebook clone.</small></h1>
+  <h1 class="text-center">Welcome to FriendZone! <br><small>A Simple Social Network.</small></h1>
 
   <div class="row">
     <div class="col-md-6">
