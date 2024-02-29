@@ -47,7 +47,8 @@
         </div>
         <div class="media-body">
           <h2 class="media-heading"><?php echo $username; ?></h2>
-          <p>Status: <?php echo $status; ?>, Location: <?php echo $location; ?></p>
+          <p>Status: <?php echo $status; ?></p>
+          <p> Location: <?php echo $location; ?></p>
         </div>
       </div>
       <!-- user profile -->
