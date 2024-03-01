@@ -6,8 +6,8 @@
     // Get the post ID, comment, and user ID from the request
     $postId = $_POST['post_id'];
     $comment = $_POST['comment'];
-    $userId = $_SESSION['user_id']; // Assuming you have the user ID stored in the session
-
+    $userId = $_SESSION['user_id'];
+    
     // Prepare the SQL statement
     $sql = "INSERT INTO comments (post_id, comment, user_id) VALUES (?, ?, ?)";
     $statement = $conn->prepare($sql);
