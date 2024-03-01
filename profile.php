@@ -5,12 +5,12 @@
   check_auth();
   db_connect();
   
-  $sql = "SELECT id, username, status, profile_image_url, location FROM users WHERE username = ?";
+  $sql = "SELECT id, username, status, profile_image_url, location, mobile, email FROM users WHERE username = ?";
   $statement = $conn->prepare($sql);
   $statement->bind_param('s', $_GET['username']);
   $statement->execute();
   $statement->store_result();
-  $statement->bind_result($id, $username, $status, $profile_image_url, $location);
+  $statement->bind_result($id, $username, $status, $profile_image_url, $location, $mobile, $email);
   $statement->fetch();
 ?>
 
@@ -32,6 +32,14 @@
             </div>
 
             <div class="form-group">
+              <input class="form-control" type="text" name="mobile" placeholder="Mobile" value="">
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="text" name="email" placeholder="Email" value="">
+            </div>
+
+            <div class="form-group">
               <input class="btn btn-primary" type="submit" value="Save">
             </div>
           </form>
@@ -49,6 +57,8 @@
           <h2 class="media-heading"><?php echo $username; ?></h2>
           <p>Status: <?php echo $status; ?></p>
           <p> Location: <?php echo $location; ?></p>
+          <p> Mobile: <?php echo $mobile; ?></p>
+          <p> Email: <?php echo $email; ?></p>
         </div>
       </div>
       <!-- user profile -->
