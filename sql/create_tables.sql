@@ -5,6 +5,8 @@ CREATE TABLE users (
     id int IDENTITY(1,1) PRIMARY KEY,
     username VARCHAR(30) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    status VARCHAR(255) NOT NULL,
+    profile_image_url VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
     mobile VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
