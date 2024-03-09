@@ -9,16 +9,15 @@ CREATE TABLE users (
     profile_image_url VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
     mobile VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    name VARCHAR(255) NOT NULL,
     );
 )
 
 CREATE TABLE posts (
     id int IDENTITY(1,1) PRIMARY KEY,
     user_id INT NOT NULL,
-    body TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    content VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 )
 
@@ -27,6 +26,7 @@ CREATE TABLE comments (
     post_id INT NOT NULL,
     user_id INT NOT NULL,
     comment TEXT NOT NULL,
+    comment_date DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 )
 
