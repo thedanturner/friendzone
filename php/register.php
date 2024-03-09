@@ -14,14 +14,13 @@
 
   if ($count > 0) {
     redirect_to("../index.php?username_error=true");
-  } else {
-    exit;
+    exit; // Exit if username exists
   }
 
   // Insert the new user
-  $insertSql = "INSERT INTO users (username, password, location) VALUES (?, ?, ?)";
+  $insertSql = "INSERT INTO users (name, username, password) VALUES (?, ?, ?)";
   $insertStatement = $conn->prepare($insertSql);
-  $insertStatement->bind_param('sss', $_POST['username'], password_hash($_POST['password'], PASSWORD_DEFAULT), $_POST['location']);
+  $insertStatement->bind_param('sss', $_POST['name'], $_POST['username'], password_hash($_POST['password'], PASSWORD_DEFAULT));
 
   if ($insertStatement->execute()) {
     redirect_to("../index.php?registered=true");
@@ -31,3 +30,4 @@
 
   $insertStatement->close();
   $conn->close();
+?>

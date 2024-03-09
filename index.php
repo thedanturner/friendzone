@@ -46,7 +46,7 @@
       <!-- login form -->
       <form method="post" action="php/login.php">
         <div class="form-group">
-          <input class="form-control" type="text" name="username" placeholder="Username" required>
+          <input class="form-control" type="text" name="username" placeholder="Email" required>
         </div>
 
         <div class="form-group">
@@ -56,6 +56,7 @@
         <div class="form-group">
           <input class="btn btn-primary" type="submit" name="login" value="Login">
         </div>
+        
       </form>
       <!-- ./login form -->
     </div>
@@ -65,11 +66,11 @@
       <!-- register form -->
       <form method="post" action="php/register.php">
         <div class="form-group">
-          <input class="form-control" type="text" name="username" placeholder="Username" required>
+          <input class="form-control" type="text" name="username" placeholder="Email" required>
         </div>
 
         <div class="form-group">
-          <input class="form-control" type="text" name="location" placeholder="Location">
+          <input class="form-control" type="text" name="name" placeholder="Full Name" required>
         </div>
 
         <div class="form-group">
